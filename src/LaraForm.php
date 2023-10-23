@@ -12,7 +12,7 @@ use BoredProgrammers\LaraForm\Themes\LaraFormTheme;
 use Illuminate\Support\Str;
 use Livewire\Component;
 
-abstract class BaseForm extends Component
+abstract class LaraForm extends Component
 {
 
     protected bool $isLivewire = true;
