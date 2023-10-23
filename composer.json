@@ -1,0 +1,29 @@
+{
+    "name": "bored-programmers/laraform",
+    "description": "Simple forms generated in php for laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Blazik",
+            "email": "jakub.blaha@involve.cz"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "laravel/framework": "^10.0",
+        "livewire/livewire": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BoredProgrammers\\LaraForm\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BoredProgrammers\\LaraForm\\LaraFormProvider"
+            ]
+        }
+    }
+}
