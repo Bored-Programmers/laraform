@@ -42,11 +42,7 @@
 
 <input
         type="{{ $field->getType() }}"
-        @if($form->getIsLivewire())
-            wire:{{ $field->getWireType() }}{{ $field->getWireMode() ? '.' . $field->getWireMode() : '' }}="{{ $field->getModel() }}"
-        @else
-            name="{{ $field->getModel() }}"
-        @endif
+        wire:{{ $field->getWireType() }}{{ $field->getWireMode() ? '.' . $field->getWireMode() : '' }}="{{ $field->getModel() }}"
         id="{{ $id }}"
         data-input-name="{{ $field->getModel() }}"
         x-on:livewire-upload-start="uploadingState[$el.id] = true"

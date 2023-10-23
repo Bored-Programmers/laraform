@@ -15,8 +15,6 @@ use Livewire\Component;
 abstract class LaraForm extends Component
 {
 
-    protected bool $isLivewire = true;
-
     /** @return BaseField[] */
     abstract protected function getFields(): array;
 
@@ -30,16 +28,6 @@ abstract class LaraForm extends Component
         ];
 
         return view('laraform::index', $params);
-    }
-
-    public function getIsLivewire(): bool
-    {
-        return $this->isLivewire;
-    }
-
-    public function setIsLivewire(bool $isLivewire): void
-    {
-        $this->isLivewire = $isLivewire;
     }
 
     public function getFormName(): string

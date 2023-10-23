@@ -49,11 +49,7 @@
 
 <input
         type="text"
-        @if($form->getIsLivewire())
-            wire:{{ $field->getWireType() }}{{ $field->getWireMode() ? '.' . $field->getWireMode() : '' }}="{{ $field->getModel() }}"
-        @else
-            name="{{ $field->getModel() }}"
-        @endif
+        wire:{{ $field->getWireType() }}{{ $field->getWireMode() ? '.' . $field->getWireMode() : '' }}="{{ $field->getModel() }}"
         id="{{ $id }}"
         data-input-name="{{ $field->getModel() }}"
         x-init="toggleState[$el.id] = $el.value"
