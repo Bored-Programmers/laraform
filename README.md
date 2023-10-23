@@ -6,7 +6,7 @@ Simple forms generated in php. Livewire is optional (but not tested).
 
 ## Requirements
 
-- (optional) Livewire 2.x
+- Livewire 2.x
 - Apline.js
 - Laravel 10.x
 - (only for `VirtualSelect`) [virtual-select](https://github.com/sa-si-dev/virtual-select)
