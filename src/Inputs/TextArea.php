@@ -25,7 +25,6 @@ class TextArea extends BaseField
         $input->setModel($modelField);
         $input->setLabel($label);
         $input->setThemeType('textarea');
-        $input->setWireMode('defer');
         $input->setView('laraform::components.text-area');
 
         return $input;

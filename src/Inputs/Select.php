@@ -34,7 +34,6 @@ class Select extends BaseField
         $input->setModel($name);
         $input->setLabel($label);
         $input->setOptions($options instanceof Collection ? $options->toArray() : $options);
-        $input->setWireMode('defer');
         $input->setView('laraform::components.select');
         $input->setThemeType('select');
 

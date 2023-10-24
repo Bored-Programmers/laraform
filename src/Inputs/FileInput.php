@@ -28,7 +28,6 @@ class FileInput extends BaseField
         $input->setLabel($label);
         $input->setType('file');
         $input->setThemeType('file');
-        $input->setWireMode('defer');
         $input->setView('laraform::components.file-input');
 
         return $input;
