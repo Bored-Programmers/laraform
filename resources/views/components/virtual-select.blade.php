@@ -61,8 +61,8 @@
 <div wire:ignore>
     <div
         id="{{ $id }}"
-        @change="toggleState[$el.id] = $el.value || null; $wire.set('{{ $field->getModel() }}', $el.value || null, {{ $field->getWireMode() === 'defer' ? "true" : "false" }});"
-        x-init="toggleState[$el.id] = $el.value || null; $wire.set('{{ $field->getModel() }}', $el.value || null, {{ $field->getWireMode() === 'defer' ? "true" : "false" }})"
+        @change="toggleState[$el.id] = $el.value || null; $wire.set('{{ $field->getModel() }}', $el.value || null, {{ $field->getWireMode() === 'live' ? "true" : "false" }});"
+        x-init="toggleState[$el.id] = $el.value || null; $wire.set('{{ $field->getModel() }}', $el.value || null, {{ $field->getWireMode() === 'live' ? "true" : "false" }})"
         data-input-name="{{ $field->getModel() }}"
     >
     </div>

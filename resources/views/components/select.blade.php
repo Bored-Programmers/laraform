@@ -49,7 +49,7 @@
         wire:{{ $field->getWireType() }}{{ $field->getWireMode() ? '.' . $field->getWireMode() : '' }}="{{ $field->getModel() }}"
         id="{{ $id }}"
         data-input-name="{{ $field->getModel() }}"
-        x-init="toggleState[$el.id] = $el.value; $wire.set('{{ $field->getModel() }}', $el.value || null, {{ $field->getWireMode() === 'defer' ? "true" : "false" }})"
+        x-init="toggleState[$el.id] = $el.value; $wire.set('{{ $field->getModel() }}', $el.value || null, {{ $field->getWireMode() === 'live' ? "true" : "false" }})"
         @change="toggleState[$event.target.id] = $event.target.value"
         @if($field->getIsMultiOptions())multiple @endif
         {{ $field->getHtmlAttributes()->merge(['class' => $inputClass]) }}

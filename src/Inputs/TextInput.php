@@ -22,7 +22,6 @@ class TextInput extends BaseField
         $input->setLabel($label);
         $input->setType('text');
         $input->setThemeType('text');
-        $input->setWireMode('defer');
         $input->setView('laraform::components.text-input');
 
         return $input;

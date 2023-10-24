@@ -65,6 +65,25 @@ abstract class LaraForm extends Component
         return $name;
     }
 
+    public function rules(?IHasChildren $container = null)
+    {
+        $rules = [];
+
+        $fields = $container ? $container->getChildren() : $this->getFields();
+
+        foreach ($fields as $field) {
+            if ($field instanceof BaseField) {
+                $model = $this->formatModelName($field);
+
+                $rules[$model] = $field->getRules();
+            } elseif ($field instanceof IHasChildren) {
+                $rules = array_merge($rules, $this->rules($field));
+            }
+        }
+
+        return $rules;
+    }
+
     //////////////////////////////////////////////////////// Protected
 
     protected function getButtons(): array
@@ -103,25 +122,6 @@ abstract class LaraForm extends Component
         }
 
         return $messages;
-    }
-
-    protected function getRules(?IHasChildren $container = null)
-    {
-        $rules = [];
-
-        $fields = $container ? $container->getChildren() : $this->getFields();
-
-        foreach ($fields as $field) {
-            if ($field instanceof BaseField) {
-                $model = $this->formatModelName($field);
-
-                $rules[$model] = $field->getRules();
-            } elseif ($field instanceof IHasChildren) {
-                $rules = array_merge($rules, $this->getRules($field));
-            }
-        }
-
-        return $rules;
     }
 
     protected function getValidationAttributes(?IHasChildren $container = null)

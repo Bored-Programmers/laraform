@@ -19,7 +19,6 @@ class Checkbox extends BaseField
         $input->setModel($modelField);
         $input->setLabel($label);
         $input->setThemeType('checkbox');
-        $input->setWireMode('defer');
         $input->setView('laraform::components.checkbox');
 
         return $input;

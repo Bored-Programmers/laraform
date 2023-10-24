@@ -20,7 +20,6 @@ class DatePicker extends BaseField
         $input->setLabel($label);
         $input->setThemeType('text');
         $input->setHtmlAttribute('class', 'datepicker');
-        $input->setWireMode('defer');
         $input->setView('laraform::components.date-picker');
 
         return $input;
