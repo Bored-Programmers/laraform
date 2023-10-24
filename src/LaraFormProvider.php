@@ -11,6 +11,10 @@ class LaraFormProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'laraform');
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'laraform');
+
+        $this->publishes([
+            __DIR__ . '/../resources/lang' => lang_path('vendor/laraform')
+        ], 'laraform-lang');
     }
 
 }
